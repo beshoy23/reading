@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.flutter_application_1"
+    namespace = "com.readingapp222.flutterapp"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
 
@@ -20,10 +20,15 @@ android {
 
     defaultConfig {
         applicationId = "com.readingapp222.flutterapp"
+
+        // ✅ Dynamic versionCode from Codemagic or fallback to 1
+        versionCode = System.getenv("BUILD_NUMBER")?.toInt() ?: 1
+
+        // ✅ Optional: display version
+        versionName = "1.0.${versionCode}"
+
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
     }
 
     signingConfigs {
