@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    id("dev.flutter.flutter-gradle-plugin") // Must be last
+    id("dev.flutter.flutter-gradle-plugin")
 }
 
 android {
@@ -27,7 +27,7 @@ android {
     }
 
     signingConfigs {
-        release {
+        create("release") {
             storeFile = file(System.getenv("CM_KEYSTORE_PATH"))
             storePassword = System.getenv("CM_KEYSTORE_PASSWORD")
             keyAlias = System.getenv("CM_KEY_ALIAS")
@@ -36,10 +36,10 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             signingConfig = signingConfigs.getByName("release")
-            minifyEnabled = false
-            shrinkResources = false
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
 }
