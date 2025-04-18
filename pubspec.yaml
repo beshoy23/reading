@@ -1,0 +1,46 @@
+name: flutter_application_1
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  audioplayers: ^6.4.0
+  flutter:
+    sdk: flutter
+  provider: ^6.1.4
+  flutter_svg: ^2.0.10+1 # Add flutter_svg dependency
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/placeholder.svg # Add the placeholder SVG
+    - assets/images/animals/
+    - assets/images/bodyparts/
+    - assets/images/clothing/
+    - assets/images/colors/
+    - assets/images/daysofweek/
+    - assets/images/family/
+    - assets/images/fruitsandfood/
+    - assets/images/numbers/
+    - assets/images/objectsthings/
+    - assets/images/schoolsupplies/
+    - assets/audio/animals/
+    - assets/audio/bodyparts/
+    - assets/audio/clothing/
+    - assets/audio/colors/
+    - assets/audio/daysofweek/
+    - assets/audio/family/
+    - assets/audio/fruitsandfood/
+    - assets/audio/numbers/
+    - assets/audio/objectsthings/
+    - assets/audio/schoolsupplies/
