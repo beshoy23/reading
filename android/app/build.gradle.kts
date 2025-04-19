@@ -32,11 +32,19 @@ android {
     }
 
     signingConfigs {
-        create("release") {
-            storeFile = file(System.getenv("CM_KEYSTORE_PATH"))
-            storePassword = System.getenv("CM_KEYSTORE_PASSWORD")
-            keyAlias = System.getenv("CM_KEY_ALIAS")
-            keyPassword = System.getenv("CM_KEY_PASSWORD")
+        maybeCreate("release").apply {
+            val storePath = System.getenv("CM_KEYSTORE_PATH")
+            val storePass = System.getenv("CM_KEYSTORE_PASSWORD")
+            val keyAlias = System.getenv("CM_KEY_ALIAS")
+            val keyPass = System.getenv("CM_KEY_PASSWORD")
+
+            // Apply only if all env vars exist (i.e. in Codemagic)
+            if (storePath != null && storePass != null && keyAlias != null && keyPass != null) {
+                storeFile = file(storePath)
+                storePassword = storePass
+                this.keyAlias = keyAlias
+                keyPassword = keyPass
+            }
         }
     }
 

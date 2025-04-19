@@ -3,7 +3,9 @@ import 'models/word_model.dart'; // Import the model
 import 'screens/mode_selection_screen.dart'; // Import the mode selection screen
 
 void main() {
+  print("DEBUG: main() started"); // Added log
   runApp(const GermanApp());
+  print("DEBUG: runApp() called"); // Added log
 }
 
 class GermanApp extends StatelessWidget {
@@ -11,6 +13,7 @@ class GermanApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("DEBUG: GermanApp build() started"); // Added log
     return MaterialApp(
       title: 'German Learning for Kids',
       theme: ThemeData(
@@ -48,13 +51,12 @@ class CategorySelectionScreen extends StatelessWidget {
         return 'Days of the Week';
       case WordCategory.numbers:
         return 'Numbers';
-      default:
-        return 'Unknown Category';
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    print("DEBUG: CategorySelectionScreen build() started"); // Added log
     // Get all category enum values
     final categories = WordCategory.values;
 

@@ -209,9 +209,8 @@ class _AudioToWordQuizScreenState extends State<AudioToWordQuizScreen> {
                   // This case shouldn't happen with current logic, but safety
                   buttonColor = Colors.green.shade300;
                 } else if (option != _currentWord.germanWord &&
-                    _isCorrect == false &&
-                    option == /* user's wrong selection - need to track this */
-                        null) {
+                    _isCorrect == false /* && option == user's wrong selection - need to track this */) {
+                  // TODO: Implement logic to track user's selection and color the wrongly selected button red.
                   // We need to track which wrong button was pressed to color it red
                   // For now, only highlighting correct one green
                 }
